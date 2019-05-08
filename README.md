@@ -1,3 +1,1 @@
 # JavaAppTest
-
-# Hellow
