@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="JavaAppTest">
+<project basedir="." default="build" name="JavaAppTest">
+	<!-- 変数 -->
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../pleiades/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
+	<!-- warファイルの変数 -->
+	<property name="war.home" value="webapps" />
+	<property name="web-app.name" value="." />
+	<property name="web-app.war" value="ROOT" />
+
+	<!-- tomcatパス -->
     <path id="Apache Tomcat v8.5 [Tomcat8 (Java8)].libraryclasspath">
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/annotations-api.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/catalina-ant.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/catalina-ha.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/catalina-storeconfig.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/catalina-tribes.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/catalina.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/ecj-4.6.3.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/el-api.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/jasper-el.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/jasper.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/jaspic-api.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/jsp-api.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/servlet-api.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-api.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-coyote.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-dbcp.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-i18n-es.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-i18n-fr.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-i18n-ja.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-i18n-ru.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-jdbc.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-jni.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-util-scan.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-util.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/tomcat-websocket.jar"/>
-        <pathelement location="C:/Custom\apache-tomcat-8.5.41/lib/websocket-api.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/annotations-api.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/catalina-ant.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/catalina-ha.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/catalina-storeconfig.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/catalina-tribes.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/catalina.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/ecj-4.6.3.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/el-api.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/jasper-el.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/jasper.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/jaspic-api.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/jsp-api.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/servlet-api.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-api.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-coyote.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-dbcp.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-i18n-ru.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-jdbc.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-jni.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-util-scan.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-util.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/tomcat-websocket.jar"/>
+        <pathelement location="${CATALINA_HOME}/lib/websocket-api.jar"/>
     </path>
+	<!-- Web App ライブラリパス -->
     <path id="Web App ライブラリー.libraryclasspath">
         <pathelement location="WebContent/WEB-INF/lib/mssql-jdbc-7.0.0.jre8.jar"/>
     </path>
+	<!-- EARライブラリパス  -->
     <path id="EAR ライブラリー.libraryclasspath"/>
     <path id="JavaAppTest.classpath">
         <pathelement location="build/classes"/>
@@ -47,6 +51,7 @@
         <path refid="Web App ライブラリー.libraryclasspath"/>
         <path refid="EAR ライブラリー.libraryclasspath"/>
     </path>
+	<!-- 実行タスク -->
     <target name="init">
         <mkdir dir="build/classes"/>
         <copy includeemptydirs="false" todir="build/classes">
@@ -69,39 +74,10 @@
             <classpath refid="JavaAppTest.classpath"/>
         </javac>
     </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-
-
-  	 <target name="war" depends="init">
-
-        <delete dir="${build.production.dir}" />
-
-        <mkdir dir="${build.production.dir}" />
-
-        <copy todir="${build.production.dir}" overwrite="true">
-
-            <fileset dir="${src.main.webapp}" />
-
-        </copy>
-
-
-
-        <property environment="env" />
-
-        <zip destfile="${build.dir}/ROOT.war" basedir="${build.production.dir}"/>
-
-    </target>
+	<target name="war">
+		<delete dir="${war.home}" />
+		<mkdir dir="${war.home}" />
+		<jar destfile="${war.home}/${web-app.war}.war"
+			basedir="${web-app.name}"/>
+	</target>
 </project>
