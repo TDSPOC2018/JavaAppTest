@@ -7,7 +7,7 @@
     <property name="source" value="1.8"/>
 	<!-- warファイルの変数 -->
 	<property name="war.home" value="webapps" />
-	<property name="web-app.name" value="." />
+	<property name="web-app.name" value="WebContent" />
 	<property name="web-app.war" value="ROOT" />
 
 	<!-- tomcatパス -->
